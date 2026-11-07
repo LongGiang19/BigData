@@ -1,0 +1,29 @@
+day,label_raw,count
+2018-02-14,Benign,525245
+2018-02-14,FTP-BruteForce,53
+2018-02-14,SSH-Bruteforce,94048
+2018-02-15,Benign,743498
+2018-02-15,DoS attacks-GoldenEye,41406
+2018-02-15,DoS attacks-Slowloris,9908
+2018-02-16,Benign,446619
+2018-02-16,DoS attacks-Hulk,145199
+2018-02-16,DoS attacks-SlowHTTPTest,55
+2018-02-20,Benign,379482
+2018-02-20,DDoS attacks-LOIC-HTTP,575364
+2018-02-21,Benign,360805
+2018-02-21,DDOS attack-HOIC,198861
+2018-02-21,DDOS attack-LOIC-UDP,1730
+2018-02-22,Benign,829883
+2018-02-22,Brute Force -Web,228
+2018-02-22,Brute Force -XSS,79
+2018-02-22,SQL Injection,34
+2018-02-23,Benign,828864
+2018-02-23,Brute Force -Web,340
+2018-02-23,Brute Force -XSS,150
+2018-02-23,SQL Injection,51
+2018-02-28,Benign,400424
+2018-02-28,Infilteration,56449
+2018-03-01,Benign,187136
+2018-03-01,Infilteration,62034
+2018-03-02,Benign,627052
+2018-03-02,Bot,144535

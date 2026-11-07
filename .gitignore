@@ -1,0 +1,17 @@
+.venv/
+.conda-py311/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.vscode/.ropeproject
+/data/raw/*
+/data/curated/*
+/data/spark_tmp/*
+/outputs/*
+!/data/raw/.gitkeep
+!/data/curated/.gitkeep
+!/outputs/models/
+!/outputs/metrics/
+!/outputs/predictions/
+!/outputs/figures/
