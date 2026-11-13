@@ -1,0 +1,61 @@
+{
+  "variants": {
+    "paired_baseline": {
+      "signed_log": true,
+      "corr_thr": 0.98,
+      "clip": 10.0
+    },
+    "no_signed_log": {
+      "signed_log": false,
+      "corr_thr": 0.98,
+      "clip": 10.0
+    },
+    "no_correlation_filter": {
+      "signed_log": true,
+      "corr_thr": 1.0,
+      "clip": 10.0
+    },
+    "clip_5": {
+      "signed_log": true,
+      "corr_thr": 0.98,
+      "clip": 5.0
+    }
+  },
+  "if_weights": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "seed": 42,
+  "fpr_target": 0.01,
+  "snapshot": "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc",
+  "official_reference": "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\.cleaning_check\\test100_20261109_233550_850520",
+  "train_source_hashes": {
+    "Bruteforce-Wednesday-14-02-2018_TrafficForML_CICFlowMeter.parquet": "c4aab044ce25349b6adbbccb25b8413fd327f68fff7822a6654490e8b1c99f30",
+    "DoS1-Thursday-15-02-2018_TrafficForML_CICFlowMeter.parquet": "c4016153a96a1e33154665b19eb1e540fce591a76969975c40237c691ddcd461",
+    "DoS2-Friday-16-02-2018_TrafficForML_CICFlowMeter.parquet": "174d1394ed65d9f5810d1e30e50a34b8acf7520a5f8c001e64ff20e2f49da773"
+  },
+  "train_days": [
+    "2018-02-14",
+    "2018-02-15"
+  ],
+  "val_days": [
+    "2018-02-16"
+  ],
+  "test_days": [
+    "2018-02-20",
+    "2018-02-21",
+    "2018-02-22",
+    "2018-02-23",
+    "2018-02-28",
+    "2018-03-01",
+    "2018-03-02"
+  ],
+  "sample_target": 300000,
+  "train_sample_method": "one Spark Bernoulli sample shared by all variants",
+  "correlation_sample_method": "one shared Spark train-only sample, capped at 100000",
+  "blas_threads": 1,
+  "driver_memory": "4g",
+  "shuffle_partitions": "8",
+  "selection": "predeclared descriptive comparisons; no test-based selection"
+}

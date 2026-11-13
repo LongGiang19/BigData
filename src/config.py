@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = Path(os.getenv("DATA_DIR", str(ROOT / "data" / "raw"))).expanduser().resolve()
 OUT_DIR = Path(os.getenv("OUTPUT_DIR", str(ROOT / "outputs"))).expanduser().resolve()
 CURATED_DIR = ROOT / "data" / "curated" / "cse2018_curated"
+TEST_SNAPSHOT_DIR = ROOT / "data" / "curated" / "test_snapshots"
 TMP_DIR = ROOT / "data" / "spark_tmp"
 SUFFIX = "_TrafficForML_CICFlowMeter.parquet"
 

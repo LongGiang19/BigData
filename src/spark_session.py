@@ -12,7 +12,7 @@ def _worker_probe(batches):
         yield batch
 
 
-def create_spark():
+def create_spark(master="local[*]"):
     # Local workers must use the notebook/CLI interpreter, not python from PATH
     # (which may be a different environment or a Windows Store alias).
     os.environ["PYSPARK_PYTHON"] = sys.executable
@@ -25,7 +25,7 @@ def create_spark():
     os.environ["PYTHONPATH"] = worker_path
     cfg.TMP_DIR.mkdir(parents=True, exist_ok=True)
     spark = (SparkSession.builder.appName("network-anomaly-vscode")
-             .master("local[*]")
+             .master(master)
              .config("spark.pyspark.python", sys.executable)
              .config("spark.pyspark.driver.python", sys.executable)
              .config("spark.executorEnv.PYTHONPATH", worker_path)

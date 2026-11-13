@@ -1,0 +1,25 @@
+attack,model,n,detected,recall
+Bot,Isolation Forest,36222,241,0.006653415051626084
+Bot,Autoencoder,36222,0,0.0
+Bot,Ensemble,36222,36,0.0009938711280437303
+Brute Force -Web,Isolation Forest,146,31,0.21232876712328766
+Brute Force -Web,Autoencoder,146,0,0.0
+Brute Force -Web,Ensemble,146,31,0.21232876712328766
+Brute Force -XSS,Isolation Forest,47,18,0.3829787234042553
+Brute Force -XSS,Autoencoder,47,0,0.0
+Brute Force -XSS,Ensemble,47,0,0.0
+DDOS attack-HOIC,Isolation Forest,49499,0,0.0
+DDOS attack-HOIC,Autoencoder,49499,0,0.0
+DDOS attack-HOIC,Ensemble,49499,0,0.0
+DDOS attack-LOIC-UDP,Isolation Forest,424,6,0.014150943396226415
+DDOS attack-LOIC-UDP,Autoencoder,424,424,1.0
+DDOS attack-LOIC-UDP,Ensemble,424,421,0.9929245283018868
+DDoS attacks-LOIC-HTTP,Isolation Forest,143371,22,0.00015344804737359716
+DDoS attacks-LOIC-HTTP,Autoencoder,143371,192,0.001339182958896848
+DDoS attacks-LOIC-HTTP,Ensemble,143371,191,0.0013322080476525935
+Infilteration,Isolation Forest,29863,1897,0.063523423634598
+Infilteration,Autoencoder,29863,0,0.0
+Infilteration,Ensemble,29863,193,0.006462847001305964
+SQL Injection,Isolation Forest,21,0,0.0
+SQL Injection,Autoencoder,21,0,0.0
+SQL Injection,Ensemble,21,0,0.0

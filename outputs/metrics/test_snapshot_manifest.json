@@ -1,0 +1,111 @@
+{
+  "settings": {
+    "version": 1,
+    "fraction": 0.25,
+    "seed": 42,
+    "sources": [
+      {
+        "file": "Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet",
+        "sha256": "4cd82632e2934593f73bea4b4f8e5f8b73dbe62c291f8b6600cb647b1e2c1e92",
+        "day": "2018-03-02"
+      },
+      {
+        "file": "DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet",
+        "sha256": "0a2edf5910123c11634d8f938d1bb7d74a6c46d01687cc1e970942966f4d2262",
+        "day": "2018-02-20"
+      },
+      {
+        "file": "DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet",
+        "sha256": "615f24a8feb234f5fb7e7314a8777ad8d19c00a51461ce7fb34f649e8fd7c3ee",
+        "day": "2018-02-21"
+      },
+      {
+        "file": "Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet",
+        "sha256": "5ccbff0cb7b2f6a713441c308444f98458ad5212425853cbc06bbf74593fdec3",
+        "day": "2018-02-28"
+      },
+      {
+        "file": "Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet",
+        "sha256": "eefc4fbdbbd160bbce76364dcb42f16e072e8b3b509e6aec76c86c4846519035",
+        "day": "2018-03-01"
+      },
+      {
+        "file": "Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet",
+        "sha256": "dfd2b4ab9661e07c0b898f7c18dd13cc8d8b8b4382577e09ff275f3eb88cd75e",
+        "day": "2018-02-22"
+      },
+      {
+        "file": "Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet",
+        "sha256": "b2e06bd0fca1ca0f88fe3031c2ecb2b4f45d39b1690a02f15173682cf1af202c",
+        "day": "2018-02-23"
+      }
+    ],
+    "method": "PCG64 Bernoulli per file in Parquet physical row order",
+    "record_id": "source basename:SHA-256:zero-based physical row ordinal"
+  },
+  "counts": [
+    {
+      "day": "2018-03-02",
+      "file": "Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "source_rows": 771587,
+      "eligible_rows": 771587,
+      "sample_rows": 193494,
+      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: float\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: float\nFlow IAT Min: float\nFwd IAT Total: float\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: float\nFwd IAT Min: float\nBwd IAT Total: float\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: float\nBwd IAT Min: float\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int16\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: float\nActive Min: float\nIdle Mean: float\nIdle Std: float\nIdle Max: float\nIdle Min: float\nLabel: dictionary<values=string, indices=int32, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10347",
+      "sample_sha256": "28ec8f9b4b590bb3176869e347774d64aefc27a25e2c183779cbe4ce60d26d01"
+    },
+    {
+      "day": "2018-02-20",
+      "file": "DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "source_rows": 954846,
+      "eligible_rows": 954846,
+      "sample_rows": 238387,
+      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int16\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int16\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int32, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293",
+      "sample_sha256": "2f4b21f6b4a4172cff66e0d8487af18b82f9171f328b8efd1839e2f3ab1fa4d4"
+    },
+    {
+      "day": "2018-02-21",
+      "file": "DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "source_rows": 561396,
+      "eligible_rows": 561396,
+      "sample_rows": 140593,
+      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int8\nFwd Packets Length Total: int32\nBwd Packets Length Total: int16\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: float\nFlow Packets/s: float\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int16\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int8\nSubflow Bwd Bytes: int16\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int32, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10289",
+      "sample_sha256": "37eb229857c3a7bc2bee6010c95488e70def725b62042b01b086a876c1e6be39"
+    },
+    {
+      "day": "2018-02-28",
+      "file": "Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "source_rows": 456873,
+      "eligible_rows": 456873,
+      "sample_rows": 113693,
+      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int16\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int32, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10295",
+      "sample_sha256": "1eacd8d52d58b34b6b0419cb65cc57b26bd8b6a794cc8e9a49c4917360f1793b"
+    },
+    {
+      "day": "2018-03-01",
+      "file": "Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "source_rows": 249170,
+      "eligible_rows": 249170,
+      "sample_rows": 62155,
+      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int16\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int32\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int32\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int16\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int16\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int32, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10295",
+      "sample_sha256": "7b65d76794abd82271030ca8072c68aeffa28202dffd6335bf561102fb412469"
+    },
+    {
+      "day": "2018-02-22",
+      "file": "Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "source_rows": 830224,
+      "eligible_rows": 830224,
+      "sample_rows": 207495,
+      "schema": "Protocol: int8\nFlow Duration: int64\nTotal Fwd Packets: int16\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int64\nFlow IAT Min: int64\nFwd IAT Total: int64\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int64\nFwd IAT Min: int64\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int16\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int64\nIdle Min: int64\nLabel: dictionary<values=string, indices=int32, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293",
+      "sample_sha256": "3ec196b4655a9fac055064a61f539396d24bd40a3673224e63919d5369dd9e62"
+    },
+    {
+      "day": "2018-02-23",
+      "file": "Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "source_rows": 829405,
+      "eligible_rows": 829405,
+      "sample_rows": 207352,
+      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int32, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293",
+      "sample_sha256": "eb221f0510272a34ad091f3209408afea7c0328ae3fc880c1f48d36a13c7d0ba"
+    }
+  ]
+}

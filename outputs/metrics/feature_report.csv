@@ -1,80 +1,80 @@
 feature,decision,reason,std_slog,nonzero_frac,std_floored
-flow_duration,keep,,4.54443458260159,1.0,False
-total_fwd_packets,keep,,0.7915345251071836,1.0,False
-total_backward_packets,keep,,1.0008124275715327,0.8490649763781017,False
-fwd_packets_length_total,keep,,2.383910165223098,0.8348744973351472,False
-bwd_packets_length_total,keep,,3.0868523226435136,0.7522238633981169,False
-fwd_packet_length_max,drop,|rho|=0.984 với fwd_packets_length_total,2.131468157111503,0.8348744973351472,False
-fwd_packet_length_min,keep,,1.7374499020906657,0.321004809503617,False
-fwd_packet_length_mean,keep,,1.6217260035207592,0.8348744973351472,False
-fwd_packet_length_std,keep,,2.379619856541934,0.5174992788109128,False
-bwd_packet_length_max,keep,,2.702020673680856,0.7522238633981169,False
-bwd_packet_length_min,keep,,2.162248283559926,0.3114929954017299,False
-bwd_packet_length_mean,keep,,2.2526958215525217,0.7522238633981169,False
-bwd_packet_length_std,keep,,2.8717245063838517,0.4438252815001994,False
-flow_bytes_s,keep,,4.315305240994696,0.8352717424716529,False
-flow_packets_s,keep,,3.346641045970389,1.0,False
-flow_iat_mean,keep,,3.808846827633453,1.0,False
-flow_iat_std,keep,,6.277914569920966,0.6521496163904604,False
-flow_iat_max,drop,|rho|=0.990 với flow_duration,4.285732979544975,1.0,False
-flow_iat_min,keep,,4.5773935081991635,0.908825935693579,False
-fwd_iat_total,keep,,6.826907842454737,0.7403112384117131,False
-fwd_iat_mean,drop,|rho|=0.992 với fwd_iat_total,6.119434060266094,0.7403112384117131,False
-fwd_iat_std,keep,,6.446342843496261,0.5587662701046237,False
-fwd_iat_max,drop,|rho|=0.996 với fwd_iat_total,6.491907195326934,0.7403112384117131,False
-fwd_iat_min,keep,,5.021666356068495,0.7291205906972125,False
-bwd_iat_total,keep,,7.430072355080959,0.525128119438371,False
-bwd_iat_mean,drop,|rho|=0.996 với bwd_iat_total,6.480271369242299,0.525128119438371,False
-bwd_iat_std,keep,,6.511577601017879,0.44818551978422655,False
-bwd_iat_max,drop,|rho|=0.998 với bwd_iat_total,6.992464377617116,0.525128119438371,False
-bwd_iat_min,keep,,4.859252600539822,0.44904385302560496,False
-fwd_psh_flags,keep,,0.14758624283370606,0.04760163248834669,False
+flow_duration,keep,,4.5444879773546125,0.9999960590915575,False
+total_fwd_packets,keep,,0.7915564269211286,1.0,False
+total_backward_packets,keep,,1.000813859027321,0.8490616302907681,False
+fwd_packets_length_total,keep,,2.383920982558264,0.8348712071711922,False
+bwd_packets_length_total,keep,,3.0868604922109695,0.752220898952743,False
+fwd_packet_length_max,drop,|rho|=0.984 với fwd_packets_length_total,2.1314786254364986,0.8348712071711922,False
+fwd_packet_length_min,keep,,1.7374480811419695,0.3210035444530531,False
+fwd_packet_length_mean,keep,,1.6217358268206665,0.8348712071711922,False
+fwd_packet_length_std,keep,,2.379619703888156,0.517497239393636,False
+bwd_packet_length_max,keep,,2.7020292046024332,0.752220898952743,False
+bwd_packet_length_min,keep,,2.1622459280517656,0.31149176783635457,False
+bwd_packet_length_mean,keep,,2.2527036418289774,0.752220898952743,False
+bwd_packet_length_std,keep,,2.8717232231895973,0.44382353242540057,False
+flow_bytes_s,keep,,4.3153185906348765,0.8352684507421912,False
+flow_packets_s,keep,,3.3466441738691954,0.9999960590915575,False
+flow_iat_mean,keep,,3.8088970421661177,0.9999960590915575,False
+flow_iat_std,keep,,6.277997528786498,0.6521501990552854,False
+flow_iat_max,drop,|rho|=0.990 với flow_duration,4.285819615201591,0.9999984236366231,False
+flow_iat_min,keep,,4.577395922358412,0.9088223540937763,False
+fwd_iat_total,keep,,6.826921651014417,0.7403083209129036,False
+fwd_iat_mean,drop,|rho|=0.992 với fwd_iat_total,6.1194467223768685,0.7403083209129036,False
+fwd_iat_std,keep,,6.446432098065275,0.5587672207846665,False
+fwd_iat_max,drop,|rho|=0.996 với fwd_iat_total,6.491965264487296,0.7403106854579691,False
+fwd_iat_min,keep,,5.021665919903161,0.7291177172997211,False
+bwd_iat_total,keep,,7.430070698400336,0.5251260499565318,False
+bwd_iat_mean,drop,|rho|=0.996 với bwd_iat_total,6.480270021116278,0.5251260499565318,False
+bwd_iat_std,keep,,6.511573772201662,0.4481837535261278,False
+bwd_iat_max,drop,|rho|=0.998 với bwd_iat_total,6.992462914560057,0.5251260499565318,False
+bwd_iat_min,keep,,4.859247452621835,0.44904208338489354,False
+fwd_psh_flags,keep,,0.14758596655623943,0.04760144489467134,False
 bwd_psh_flags,drop,feature hằng,0.0,0.0,False
 fwd_urg_flags,drop,feature hằng,0.0,0.0,False
 bwd_urg_flags,drop,feature hằng,0.0,0.0,False
-fwd_header_length,keep,,1.4494828537389401,0.9764364273790176,False
-bwd_header_length,keep,,1.9711648139776503,0.8481759039297317,False
-fwd_packets_s,drop,|rho|=0.997 với flow_packets_s,3.2202672594288653,1.0,False
-bwd_packets_s,keep,,3.0607985395665698,0.8490649763781017,False
-packet_length_min,drop,|rho|=0.997 với fwd_packet_length_min,1.7356938351840348,0.319315729488673,False
-packet_length_max,keep,,2.419866138780079,0.8352717424716529,False
-packet_length_mean,keep,,1.841382994150141,0.8352717424716529,False
-packet_length_std,keep,,2.0895159517349025,0.8206706191506836,False
-packet_length_variance,drop,|rho|=1.000 với packet_length_std,4.196005349485818,0.8206706191506836,False
-fin_flag_count,keep,,0.04112968600051313,0.003533432434434848,True
-syn_flag_count,drop,|rho|=1.000 với fwd_psh_flags,0.14758624283370606,0.04760163248834669,False
-rst_flag_count,keep,,0.1913688085840621,0.08313536758574268,False
-psh_flag_count,keep,,0.3461085098699206,0.4741018240172518,False
-ack_flag_count,keep,,0.2683496109995342,0.18358636692524383,False
-urg_flag_count,keep,,0.10851559910986727,0.025141518579880163,False
+fwd_header_length,keep,,1.4495006218439543,0.9764325793324574,False
+bwd_header_length,keep,,1.9711722776409806,0.8481725613461513,False
+fwd_packets_s,drop,|rho|=0.997 với flow_packets_s,3.2202689079742486,0.9999960590915575,False
+bwd_packets_s,keep,,3.060798301535685,0.8490616302907681,False
+packet_length_min,drop,|rho|=0.998 với fwd_packet_length_min,1.7356920080117928,0.31931447109461886,False
+packet_length_max,keep,,2.4198790171533986,0.8352684507421912,False
+packet_length_mean,keep,,1.841393766458532,0.8352684507421912,False
+packet_length_std,keep,,2.0895247549551446,0.8206673849629121,False
+packet_length_variance,drop,|rho|=1.000 với packet_length_std,4.1960225414230825,0.8206673849629121,False
+fin_flag_count,keep,,0.041129605243584964,0.003533418509501136,True
+syn_flag_count,drop,|rho|=1.000 với fwd_psh_flags,0.14758596655623943,0.04760144489467134,False
+rst_flag_count,keep,,0.19136846569134314,0.0831350399568707,False
+psh_flag_count,keep,,0.34610844269683366,0.47409995562537094,False
+ack_flag_count,keep,,0.2683492011319961,0.18358564342818048,False
+urg_flag_count,keep,,0.10851539079898638,0.025141419499457338,False
 cwe_flag_count,drop,feature hằng,0.0,0.0,False
-ece_flag_count,drop,|rho|=1.000 với rst_flag_count,0.19136633385015578,0.08313300303135872,False
-down_up_ratio,keep,,0.36246518183640763,0.5541750936757629,False
-avg_packet_size,drop,|rho|=0.997 với packet_length_mean,1.884413067620014,0.8352717424716529,False
-avg_fwd_segment_size,drop,|rho|=1.000 với fwd_packet_length_mean,1.6217260035207592,0.8348744973351472,False
-avg_bwd_segment_size,drop,|rho|=1.000 với bwd_packet_length_mean,2.2526958215525217,0.7522238633981169,False
+ece_flag_count,drop,|rho|=1.000 với rst_flag_count,0.1913659909608106,0.08313267541180523,False
+down_up_ratio,keep,,0.36246530798972865,0.5541729097224576,False
+avg_packet_size,drop,|rho|=0.997 với packet_length_mean,1.8844246888069967,0.8352684507421912,False
+avg_fwd_segment_size,drop,|rho|=1.000 với fwd_packet_length_mean,1.6217358268206665,0.8348712071711922,False
+avg_bwd_segment_size,drop,|rho|=1.000 với bwd_packet_length_mean,2.2527036418289774,0.752220898952743,False
 fwd_avg_bytes_bulk,drop,feature hằng,0.0,0.0,False
 fwd_avg_packets_bulk,drop,feature hằng,0.0,0.0,False
 fwd_avg_bulk_rate,drop,feature hằng,0.0,0.0,False
 bwd_avg_bytes_bulk,drop,feature hằng,0.0,0.0,False
 bwd_avg_packets_bulk,drop,feature hằng,0.0,0.0,False
 bwd_avg_bulk_rate,drop,feature hằng,0.0,0.0,False
-subflow_fwd_packets,drop,|rho|=1.000 với total_fwd_packets,0.7915345251071836,1.0,False
-subflow_fwd_bytes,drop,|rho|=1.000 với fwd_packets_length_total,2.383910165223098,0.8348744973351472,False
-subflow_bwd_packets,drop,|rho|=1.000 với total_backward_packets,1.0008124275715327,0.8490649763781017,False
-subflow_bwd_bytes,drop,|rho|=1.000 với bwd_packets_length_total,3.0868523226436304,0.7522238633981169,False
-init_fwd_win_bytes,keep,,4.448388598289055,0.9964839076310475,False
-init_bwd_win_bytes,keep,,4.414964375319744,0.9421976798992384,False
-fwd_act_data_packets,keep,,0.8837261590756909,0.5843160684081347,False
-fwd_seg_size_min,keep,,0.5794779288243858,0.9764364273790176,False
-active_mean,keep,,4.412486071666476,0.15367081304414307,False
-active_std,keep,,3.7719946902251076,0.11462965561053583,False
-active_max,drop,|rho|=0.998 với active_mean,4.698483662210471,0.15367081304414307,False
-active_min,drop,|rho|=0.995 với active_mean,4.112624949974312,0.15367081304414307,False
-idle_mean,keep,,6.340113627418741,0.1726912885087386,False
-idle_std,keep,,3.873512673468203,0.1325648006128925,False
-idle_max,drop,|rho|=1.000 với idle_mean,6.3527271476705,0.1726912885087386,False
-idle_min,drop,|rho|=1.000 với idle_mean,6.306908569731925,0.1726912885087386,False
-is_tcp,keep,,0.3287331326458216,0.6583542070939784,False
-is_udp,drop,|rho|=0.991 với fwd_packet_length_min,0.3228206713082553,0.31808222028503913,False
-is_other_proto,keep,,0.10514005196305265,0.023563572620982427,False
+subflow_fwd_packets,drop,|rho|=1.000 với total_fwd_packets,0.7915564269211286,1.0,False
+subflow_fwd_bytes,drop,|rho|=1.000 với fwd_packets_length_total,2.383920982558264,0.8348712071711922,False
+subflow_bwd_packets,drop,|rho|=1.000 với total_backward_packets,1.000813859027321,0.8490616302907681,False
+subflow_bwd_bytes,drop,|rho|=1.000 với bwd_packets_length_total,3.0868604922110863,0.752220898952743,False
+init_fwd_win_bytes,keep,,4.4483950508871475,0.9964839214876456,False
+init_bwd_win_bytes,keep,,4.414962647187373,0.9421979076928897,False
+fwd_act_data_packets,keep,,0.8837259798515865,0.5843137656720077,False
+fwd_seg_size_min,keep,,0.5795017184700316,0.9764325793324574,False
+active_mean,keep,,4.412478923348027,0.1536702074415386,False
+active_std,keep,,3.771988183421744,0.11462920386555828,False
+active_max,drop,|rho|=0.998 với active_mean,4.698476054773276,0.1536702074415386,False
+active_min,drop,|rho|=0.995 với active_mean,4.112618275921662,0.1536702074415386,False
+idle_mean,keep,,6.340205980769655,0.17269297249324725,False
+idle_std,keep,,3.8736916171184963,0.13256664273221605,False
+idle_max,drop,|rho|=1.000 với idle_mean,6.352828438162336,0.17269297249324725,False
+idle_min,drop,|rho|=1.000 với idle_mean,6.306971477187954,0.17269297249324725,False
+is_tcp,keep,,0.32873373311266046,0.6583516125803256,False
+is_udp,drop,|rho|=0.992 với fwd_packet_length_min,0.32282033191502035,0.3180809667521318,False
+is_other_proto,keep,,0.10514842936379236,0.0235674206675426,False

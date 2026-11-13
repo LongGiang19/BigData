@@ -1,0 +1,4 @@
+label_raw,y,n
+Benign,0,360805
+DDOS attack-HOIC,1,198861
+DDOS attack-LOIC-UDP,1,1730

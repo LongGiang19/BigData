@@ -4,8 +4,8 @@ from . import config as cfg
 from .preprocessing import to_z
 from .utils import log
 
-def fit_models(sample, cols, mean, std):
-    Z = to_z(sample, cols, mean, std)
+def fit_models(sample, cols, mean, std, *, clip=cfg.Z_CLIP, signed_log=True):
+    Z = to_z(sample, cols, mean, std, clip=clip, signed_log=signed_log)
     d = Z.shape[1]
     iso = IsolationForest(n_estimators=200, max_samples=256, random_state=cfg.SEED, n_jobs=-1).fit(Z)
     iso.set_params(n_jobs=1)

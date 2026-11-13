@@ -1,0 +1,23 @@
+{
+  "seeds": [
+    42,
+    43
+  ],
+  "feature_rank_spearman": 0.994572591587517,
+  "top5_overlap": [
+    "flow_duration",
+    "flow_packets_s",
+    "fwd_iat_min",
+    "fwd_iat_total",
+    "rst_flag_count"
+  ],
+  "highest_test_day": [
+    "2018-02-21",
+    "2018-02-21"
+  ],
+  "highest_day_median_ks": [
+    0.5678399999999999,
+    0.56837
+  ],
+  "test_performance_and_attack_metrics_byte_identical": true
+}

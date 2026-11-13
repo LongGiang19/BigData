@@ -1,0 +1,42 @@
+{
+  "prediction_rows": 1162581,
+  "label_mismatches": 0,
+  "ensemble_max_abs_error": 5.329070518200751e-15,
+  "validation_rows": 591873,
+  "validation_benign_rows": 446619,
+  "calibration": {
+    "s_iso": {
+      "saved": 0.5834286909621103,
+      "recomputed": 0.5834286909621103,
+      "delta": 0.0,
+      "benign_above": 4464,
+      "validation_fpr": 0.009995096491640525
+    },
+    "s_ae": {
+      "saved": 2.077148289680481,
+      "recomputed": 2.077148289680481,
+      "delta": 0.0,
+      "benign_above": 4467,
+      "validation_fpr": 0.010001813626379532
+    },
+    "s_ens": {
+      "saved": 5.185227849435687,
+      "recomputed": 5.185228145368117,
+      "delta": 2.9593242967251854e-07,
+      "benign_above": 4467,
+      "validation_fpr": 0.010001813626379532
+    }
+  },
+  "score_norm_saved": [
+    -0.6517370584041617,
+    0.02166883636102427,
+    -2.0733253586686393,
+    0.5373651919353639
+  ],
+  "score_norm_recomputed": [
+    -0.6517370584041617,
+    0.02166883636102427,
+    -2.0733256340026855,
+    0.537365198135376
+  ]
+}

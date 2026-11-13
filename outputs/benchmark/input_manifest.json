@@ -1,0 +1,43 @@
+{
+  "model": "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\.cleaning_check\\test100_20261109_233550_850520\\outputs\\models\\model.joblib",
+  "snapshot": "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc",
+  "inputs": {
+    "100000": [
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\100000\\Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\100000\\DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\100000\\DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\100000\\Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\100000\\Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\100000\\Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\100000\\Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet"
+    ],
+    "500000": [
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\500000\\Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\500000\\DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\500000\\DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\500000\\Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\500000\\Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\500000\\Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\500000\\Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet"
+    ],
+    "1000000": [
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\1000000\\Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\1000000\\DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\1000000\\DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\1000000\\Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\1000000\\Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\1000000\\Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\outputs\\benchmark\\inputs\\1000000\\Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet"
+    ],
+    "4653501": [
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc\\Botnet-Friday-02-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc\\DDoS1-Tuesday-20-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc\\DDoS2-Wednesday-21-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc\\Infil1-Wednesday-28-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc\\Infil2-Thursday-01-03-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc\\Web1-Thursday-22-02-2018_TrafficForML_CICFlowMeter.parquet",
+      "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\data\\curated\\test_snapshots\\c5af9b674f2f1eb8d6aacecc\\Web2-Friday-23-02-2018_TrafficForML_CICFlowMeter.parquet"
+    ]
+  },
+  "selection": "proportional physical prefix per day; full snapshot read directly"
+}

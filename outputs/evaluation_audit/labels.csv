@@ -1,0 +1,20 @@
+day,label_raw,y,n
+2018-02-20,Benign,0,94972
+2018-02-20,DDoS attacks-LOIC-HTTP,1,143371
+2018-02-21,Benign,0,90639
+2018-02-21,DDOS attack-HOIC,1,49499
+2018-02-21,DDOS attack-LOIC-UDP,1,424
+2018-02-22,Benign,0,207414
+2018-02-22,Brute Force -Web,1,59
+2018-02-22,Brute Force -XSS,1,15
+2018-02-22,SQL Injection,1,6
+2018-02-23,Benign,0,207074
+2018-02-23,Brute Force -Web,1,87
+2018-02-23,Brute Force -XSS,1,32
+2018-02-23,SQL Injection,1,15
+2018-02-28,Benign,0,100351
+2018-02-28,Infilteration,1,14181
+2018-03-01,Benign,0,46487
+2018-03-01,Infilteration,1,15682
+2018-03-02,Benign,0,156051
+2018-03-02,Bot,1,36222

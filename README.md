@@ -1,6 +1,27 @@
 # Network Anomaly Detection — Hybrid VS Code (`.ipynb` + `.py`)
 
-Đây là phiên bản tách từ notebook Kaggle **CSE-CIC-IDS2018** bạn gửi. **Chưa kiểm thử end-to-end với dataset thực tế** trong môi trường tạo dự án. Không chứa Parquet gốc.
+Project nghiên cứu phát hiện bất thường trên **CSE-CIC-IDS2018**, gồm pipeline PySpark, Isolation Forest, Autoencoder, các audit, Traffic Lab và demo Kafka replay. Đã kiểm chứng full test 4.653.501 flow. Dữ liệu Parquet gốc được giữ ngoài Git.
+
+## Nội dung đưa lên GitHub
+
+Repository giữ mã nguồn, notebook đã xóa output, unit/integration tests, model nhỏ,
+CSV tổng hợp, báo cáo và biểu đồ nghiên cứu. Dataset, predictions Parquet, môi trường
+Python, cache, Kafka broker, checkpoint và SQLite runtime được bỏ qua bằng `.gitignore`.
+Các file local vẫn có thể được dùng để chạy demo trên máy hiện tại.
+
+Khi clone trên máy mới, cần tạo môi trường Python và tải dataset theo phần chuẩn bị.
+Dashboard đọc các CSV từ lượt full test chỉ định qua `DASHBOARD_FULL_RUN` và
+`DASHBOARD_RESEARCH_DIR`. Các đường dẫn `.cleaning_check/...` là artifacts local
+của máy nghiên cứu, không có trong Git. Model và snapshot nguồn cho streaming
+cũng cần được tạo hoặc cung cấp lại theo hướng dẫn tương ứng.
+
+- [Hướng dẫn Traffic Lab](dashboard/README.md)
+- [Hướng dẫn Kafka replay](streaming/README.md)
+- Báo cáo và CSV nghiên cứu ở `outputs/temporal_drift/`, `outputs/ablation_study/`,
+  `outputs/benchmark/`, `outputs/fpr_sensitivity/` và các thư mục audit.
+
+Notebook gốc trước khi xóa output được sao lưu local trong
+`.cleaning_check/github_cleanup_20261113_162632/`.
 
 ## Ý tưởng tổ chức
 
@@ -104,11 +125,17 @@ thay kernel notebook đã chọn. Chạy terminal bằng:
 ## Những giới hạn hiện có
 
 - Đây là Spark **local** và scikit-learn train trên dữ liệu lấy mẫu, không phải distributed model training.
-- `TEST_FRAC=0.25` mặc định: kết quả thử nghiệm, không phải full test.
-- Baseline random split được giữ theo notebook gốc, còn hạn chế về độc lập của preprocessing. Chưa nên diễn giải đây là so sánh công bằng tuyệt đối.
+- `TEST_FRAC=0.25` mặc định tạo snapshot Parquet lấy mẫu Bernoulli theo thứ tự dòng trong file nguồn. Pipeline tái sử dụng snapshot trong `data/curated/test_snapshots/` khi SHA-256 nguồn, seed và fraction khớp. Manifest đi kèm ghi schema, số dòng và checksum của từng file. Bản sao manifest nằm trong `metrics/test_snapshot_manifest.json`.
+- HistGradientBoosting random split 70/15/15 fit feature selection, scaling và classifier trên train của baseline. Ngưỡng lấy từ Benign Validation của cùng split. Đây là đối chứng với dữ liệu trộn ngày, có thể chứa các loại attack giống nhau trong các tập.
+
+Để lưu một lượt chạy riêng trên PowerShell, chọn thư mục đầu ra mới trước khi chạy:
+
+```powershell
+$env:OUTPUT_DIR = Join-Path (Get-Location) ("outputs/repro_" + (Get-Date -Format "yyyyMMdd_HHmmss"))
+.\.conda-py311\python.exe -X utf8 run_pipeline.py
+```
 - `notebooks/02_preprocessing.ipynb` là notebook kiểm tra quy trình; notebook 03 fit lại preprocessing trong full pipeline.
-- Chưa có Kafka, Streamlit hay HDFS thật. `dashboard/`, `streaming/` hiện chỉ là vị trí dự kiến.
-- Chưa chạy với dataset thực tế trong môi trường tạo ZIP; cần kiểm thử trên máy VS Code và so sánh với notebook Kaggle.
+- Kafka replay và Streamlit chạy trên máy local. Hướng dẫn và giới hạn kiểm thử nằm trong README của từng thành phần.
 
 ## Test cú pháp không cần dataset
 

@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from pyspark.sql import functions as F, types as T
+from . import config as cfg
 from .preprocessing import to_z
 
 SCORE_SCHEMA = T.StructType([
@@ -9,12 +10,12 @@ SCORE_SCHEMA = T.StructType([
     T.StructField("s_ae", T.DoubleType()), T.StructField("top_feat", T.StringType())
 ])
 
-def make_scorer(bc, cols):
+def make_scorer(bc, cols, *, clip=cfg.Z_CLIP, signed_log=True):
     def fn(it):
         iso, ae, mean, std, err_ref = bc.value
         names = np.array(cols)
         for pdf in it:
-            Z = to_z(pdf, cols, mean, std)
+            Z = to_z(pdf, cols, mean, std, clip=clip, signed_log=signed_log)
             err = (Z - ae.predict(Z)) ** 2
             out = pdf[["day", "label_raw", "y"]].copy()
             out["s_iso"] = -iso.score_samples(Z)

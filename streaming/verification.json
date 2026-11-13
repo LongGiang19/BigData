@@ -1,0 +1,78 @@
+{
+  "broker_messages": 670,
+  "rows": 240,
+  "alerts": 180,
+  "duplicates": 430,
+  "score_checked_rows": 230,
+  "max_absolute_score_error": 2.574920654296875e-05,
+  "score_tolerance": 3e-05,
+  "alerts_identical": true,
+  "browser_auto_refresh": [
+    230,
+    240
+  ],
+  "batches": [
+    {
+      "batch": 0,
+      "received": 100,
+      "inserted": 100,
+      "duplicates": 0,
+      "seconds": 2.8690505999838933
+    },
+    {
+      "batch": 1,
+      "received": 100,
+      "inserted": 100,
+      "duplicates": 0,
+      "seconds": 1.8619909000117332
+    },
+    {
+      "batch": 2,
+      "received": 100,
+      "inserted": 0,
+      "duplicates": 100,
+      "seconds": 2.9058820999925956
+    },
+    {
+      "batch": 3,
+      "received": 100,
+      "inserted": 0,
+      "duplicates": 100,
+      "seconds": 1.8819056999636814
+    },
+    {
+      "batch": 4,
+      "received": 30,
+      "inserted": 30,
+      "duplicates": 0,
+      "seconds": 1.806653700012248
+    },
+    {
+      "batch": 5,
+      "received": 100,
+      "inserted": 0,
+      "duplicates": 100,
+      "seconds": 2.9520336000132374
+    },
+    {
+      "batch": 6,
+      "received": 100,
+      "inserted": 0,
+      "duplicates": 100,
+      "seconds": 1.9566248999908566
+    },
+    {
+      "batch": 7,
+      "received": 40,
+      "inserted": 10,
+      "duplicates": 30,
+      "seconds": 1.799643800011836
+    }
+  ],
+  "latency_seconds": {
+    "min": 12.563,
+    "median": 14.6375,
+    "max": 16.688
+  },
+  "latency_scope": "producer timestamp to recorded processing time just before SQLite transaction; includes startup/backlog of available-now consumer"
+}

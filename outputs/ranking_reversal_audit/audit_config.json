@@ -1,0 +1,13 @@
+{
+  "day": "2018-02-21",
+  "source_partition": "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\.cleaning_check\\test100_20261109_233550_850520\\outputs\\predictions\\test_scored\\day=2018-02-21",
+  "benign": 360805,
+  "attack": 200591,
+  "thresholds": {
+    "s_iso": 0.5834286909621103,
+    "s_ae": 2.077148289680481,
+    "s_ens": 5.185227849435687
+  },
+  "label_mismatches": 0,
+  "ensemble_max_abs_error": 3.552713678800501e-15
+}

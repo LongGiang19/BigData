@@ -11,11 +11,11 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, average_precision_score
 from . import config as cfg
-from .preprocessing import valid_cond, to_z
+from .preprocessing import fit_feature_spec, valid_cond, to_z
 from .scoring import select_scoring_columns as sel
 from .evaluation import evaluate, metrics_df
 
-def run_baselines(all_df, train_days, val_days, test, feats, cols, mean, std, metrics):
+def run_baselines(all_df, train_days, val_days, test, feats, cols, metrics):
     sup_all = all_df.filter(F.col("day").isin(train_days + val_days)).filter(valid_cond(feats)).select(*cols, "y")
     n_sup = sup_all.count()
     sup = sup_all.sample(False, min(1.0, 500_000 / max(n_sup, 1)), cfg.SEED).cache()
@@ -30,14 +30,26 @@ def run_baselines(all_df, train_days, val_days, test, feats, cols, mean, std, me
     print(g.round(3))
 
     n_all = all_df.count()
-    pdf = all_df.sample(False, min(1.0, 1_000_000 / n_all), cfg.SEED).select(*cols, "label_raw", "y").toPandas()
-    Zs = to_z(pdf, cols, mean, std)
+    pdf = all_df.sample(False, min(1.0, 1_000_000 / n_all), cfg.SEED).select(*feats, "label_raw", "y").toPandas()
+    metrics["HistGradientBoosting random-split 70/15/15"] = run_random_baseline(
+        all_df.sparkSession, pdf, feats)
+    return metrics
+
+
+def run_random_baseline(spark, pdf, feats):
+    """Fit preprocessing and classifier on this baseline's training rows only."""
     y = pdf["y"].to_numpy()
     vc = pdf.label_raw.value_counts()
     strat = pdf.label_raw.where(pdf.label_raw.map(vc) >= 10, "RARE")          # lớp quá hiếm gộp lại để stratify được
     idx = np.arange(len(pdf))
     i_tr, i_tmp = train_test_split(idx, test_size=0.30, stratify=strat, random_state=cfg.SEED)
     i_va, i_te = train_test_split(i_tmp, test_size=0.50, stratify=strat.iloc[i_tmp], random_state=cfg.SEED)
+
+    train = spark.createDataFrame(pdf.iloc[i_tr][feats])
+    cols, mean, std, _ = fit_feature_spec(train, feats)
+    if not cols:
+        raise ValueError("Random baseline feature selection returned no features")
+    Zs = to_z(pdf, cols, mean, std)
 
     clf = HistGradientBoostingClassifier(max_iter=300, learning_rate=0.1, early_stopping=True,
                                          class_weight="balanced", random_state=cfg.SEED).fit(Zs[i_tr], y[i_tr])
@@ -53,11 +65,11 @@ def run_baselines(all_df, train_days, val_days, test, feats, cols, mean, std, me
                 "roc_auc": roc_auc_score(yt, s), "pr_auc": average_precision_score(yt, s)}
 
     r_rand = eval_bin(y[i_te], s_te, thr_sup)
-    metrics["GBT random-split 70/15/15 (cận trên)"] = r_rand
     print("Random stratified split @FPR mục tiêu:", {k: round(v, 4) for k, v in r_rand.items()})
     per = pd.DataFrame({"label": pdf.label_raw.iloc[i_te].values, "hit": s_te > thr_sup})
     per = per[per.label.str.upper() != "BENIGN"].groupby("label").hit.agg(["size", "mean"]).rename(columns={"mean": "recall"})
     print(per.round(3))
 
 
-    return metrics
+    return dict(r_rand, threshold=thr_sup, features=cols,
+                split_rows={"train": len(i_tr), "validation": len(i_va), "test": len(i_te)})

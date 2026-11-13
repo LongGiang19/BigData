@@ -1,6 +1,8 @@
 """Entrypoint: python run_pipeline.py (run from project root)."""
 import json
 import time
+import shutil
+from datetime import datetime
 from pathlib import Path
 import joblib
 import numpy as np
@@ -11,13 +13,24 @@ from pyspark.sql import functions as F
 from src import config as cfg
 from src.utils import day_of, log
 from src.spark_session import create_spark
-from src.data_io import prepare_curated
-from src.preprocessing import profile, valid_cond, fit_feature_spec, to_z
+from src.data_io import load_days, prepare_curated
+from src.test_snapshot import fixed_test_files
+from src.preprocessing import (profile, sanitize_features, quality_by_day,
+                               fit_feature_spec, to_z)
 from src.models import fit_models
 from src.scoring import (SCORE_SCHEMA, make_scorer, select_scoring_columns,
                          fuse_scores, calibrate, score_pandas)
 from src.evaluation import evaluate, metrics_df
 from src.reports import plot_ae_loss, plot_metrics
+
+
+def _backup_existing(path):
+    """Preserve existing artifacts before the pipeline overwrites them."""
+    if path.exists() and any(p.is_file() and p.name != ".gitkeep" for p in path.rglob("*")):
+        stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+        target = path.parent / (path.name + "_backups") / stamp
+        shutil.copytree(path, target)
+        log(f"Backed up {path} to {target}")
 
 
 def main():
@@ -31,21 +44,27 @@ def main():
     val_days = [day_of(cfg.VAL_FILE)]
     test_days = sorted(day_of(p) for p in cfg.TEST_FILES)
     assert max(train_days) < min(val_days) < min(test_days), "Incorrect temporal split"
+    _backup_existing(cfg.OUT_DIR)
+    if not (cfg.SKIP_INGEST and any(cfg.CURATED_DIR.glob("day=*"))):
+        _backup_existing(cfg.CURATED_DIR)
     print("Train:", train_days, "Validation:", val_days, "Test:", test_days)
     spark = create_spark()
     try:
         log("Ingest and prepare parquet")
-        all_df = prepare_curated(spark, files)
-        feats = [c for c in all_df.columns if c not in cfg.EXCLUDE_FEATURES]
-        train_all = all_df.filter(F.col("day").isin(train_days))
-        ben_train_raw = train_all.filter(F.col("y") == 0)
+        raw_df = prepare_curated(spark, files)
+        feats = [c for c in raw_df.columns if c not in cfg.EXCLUDE_FEATURES]
+        quality_by_day(raw_df, feats).toPandas().to_csv(
+            cfg.OUT_DIR / "metrics" / "data_quality_by_day.csv", index=False)
+        ben_train_raw = raw_df.filter(F.col("day").isin(train_days) & (F.col("y") == 0))
         report = profile(ben_train_raw, feats)
         report.to_csv(cfg.OUT_DIR / "metrics" / "data_quality_train.csv", index=False)
-        ben_train = ben_train_raw.filter(valid_cond(feats)).persist()
+        all_df = sanitize_features(raw_df, feats)
+        train_all = all_df.filter(F.col("day").isin(train_days))
+        ben_train = train_all.filter(F.col("y") == 0).persist()
         n_raw, n_ben = ben_train_raw.count(), ben_train.count()
         if not n_ben:
-            raise ValueError("No valid benign training records")
-        log(f"Benign training {n_raw:,} -> {n_ben:,} records")
+            raise ValueError("No benign training records")
+        log(f"Benign training {n_raw:,} -> {n_ben:,} records (invalid cells replaced with zero)")
         cols, mean, std, feature_report = fit_feature_spec(ben_train, feats)
         if not cols:
             raise ValueError("Feature selection returned no features")
@@ -56,9 +75,12 @@ def main():
 
         val_all = all_df.filter(F.col("day").isin(val_days))
         ben_val = val_all.filter(F.col("y") == 0)
-        test = all_df.filter(F.col("day").isin(test_days))
-        if cfg.TEST_FRAC < 1:
-            test = test.sample(False, cfg.TEST_FRAC, cfg.SEED)
+        snapshot_files, manifest = fixed_test_files(
+            cfg.TEST_FILES, cfg.TEST_SNAPSHOT_DIR, cfg.TEST_FRAC, cfg.SEED)
+        test_raw, _ = load_days(spark, snapshot_files)
+        test = sanitize_features(test_raw, feats)
+        shutil.copy2(manifest, cfg.OUT_DIR / "metrics" / "test_snapshot_manifest.json")
+        log(f"Using fixed test snapshot: {manifest.parent}")
         sample = (ben_train.sample(False, min(1., cfg.SAMPLE / n_ben), cfg.SEED)
                   .select(*cols).toPandas())
         log(f"Training models on {len(sample):,} benign records")
@@ -111,7 +133,7 @@ def main():
 
         if cfg.WITH_SUPERVISED:
             from src.baselines import run_baselines
-            metrics = run_baselines(all_df, train_days, val_days, test, feats, cols, mean, std, metrics)
+            metrics = run_baselines(all_df, train_days, val_days, test, feats, cols, metrics)
 
         model_art = {"iso": iso, "ae": ae, "mean": mean, "std": std, "cols": cols,
                      "err_ref": err_ref, "score_norm": score_norm, "thresholds": thr,

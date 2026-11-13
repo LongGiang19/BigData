@@ -1,0 +1,156 @@
+{
+  "official_run": "D:\\network-anomaly-hybrid-vscode\\network-anomaly-hybrid-vscode\\.cleaning_check\\test100_20261109_233550_850520",
+  "sample_size": 50000,
+  "seed": 42,
+  "train_quotas": {
+    "2018-02-14": 20699,
+    "2018-02-15": 29301
+  },
+  "thresholds": {
+    "s_iso": 0.5834286909621103,
+    "s_ae": 2.077148289680481,
+    "s_ens": 5.185227849435687
+  },
+  "features": [
+    "flow_duration",
+    "total_fwd_packets",
+    "total_backward_packets",
+    "fwd_packets_length_total",
+    "bwd_packets_length_total",
+    "fwd_packet_length_min",
+    "fwd_packet_length_mean",
+    "fwd_packet_length_std",
+    "bwd_packet_length_max",
+    "bwd_packet_length_min",
+    "bwd_packet_length_mean",
+    "bwd_packet_length_std",
+    "flow_bytes_s",
+    "flow_packets_s",
+    "flow_iat_mean",
+    "flow_iat_std",
+    "flow_iat_min",
+    "fwd_iat_total",
+    "fwd_iat_std",
+    "fwd_iat_min",
+    "bwd_iat_total",
+    "bwd_iat_std",
+    "bwd_iat_min",
+    "fwd_psh_flags",
+    "fwd_header_length",
+    "bwd_header_length",
+    "bwd_packets_s",
+    "packet_length_max",
+    "packet_length_mean",
+    "packet_length_std",
+    "fin_flag_count",
+    "rst_flag_count",
+    "psh_flag_count",
+    "ack_flag_count",
+    "urg_flag_count",
+    "down_up_ratio",
+    "init_fwd_win_bytes",
+    "init_bwd_win_bytes",
+    "fwd_act_data_packets",
+    "fwd_seg_size_min",
+    "active_mean",
+    "active_std",
+    "idle_mean",
+    "idle_std",
+    "is_tcp",
+    "is_other_proto"
+  ],
+  "samples": [
+    {
+      "day": "2018-02-14",
+      "population": 525245,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00009-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "3ae54a39580367ecc27098b190273cfbcb530a063e0d9a421d9b832f8cf26224"
+    },
+    {
+      "day": "2018-02-15",
+      "population": 743498,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00030-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "917c10daf7c37df8e6a655a4f8e05625593e29f0ea83bd202ba69cceb23a1cbd"
+    },
+    {
+      "day": "2018-02-16",
+      "population": 446619,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00049-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "e382cee94ff31ae8d31af3d139552c21d717781af70de990b9dd93c921467ac5"
+    },
+    {
+      "day": "2018-02-20",
+      "population": 379482,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00067-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "7dc40479b6b7afb3bf5debd06f058ae70fea1bfdd5500d0ec5fe7fe6eafcacfb"
+    },
+    {
+      "day": "2018-02-21",
+      "population": 360805,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00082-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "c3ab6a3d642c2b7671add9736b4f2eb5600c64ad0dd4aa457a4f6127f71a9577"
+    },
+    {
+      "day": "2018-02-22",
+      "population": 829883,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00099-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "1af463db2f52a0edbe57ad5a14604d968eea23ea402987c863619e6b7c21c70c"
+    },
+    {
+      "day": "2018-02-23",
+      "population": 828864,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00124-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "ada7018ff67bf339bad1f04d8e2e268e6ba33d85f2f8d0e7f094bde1dc72fc26"
+    },
+    {
+      "day": "2018-02-28",
+      "population": 400424,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00143-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "800ddb5ce59448692dc36be3910c032674a2e45fc9b01c02e668f03134dc6aef"
+    },
+    {
+      "day": "2018-03-01",
+      "population": 187136,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00153-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "1814f7c4d8ae3d0d61f338c88e32a2ca4c654f7bb87754fdeb1ddd5011022017"
+    },
+    {
+      "day": "2018-03-02",
+      "population": 627052,
+      "sample_n": 50000,
+      "ordered_files": [
+        "part-00166-aaaa43c7-91e2-4c82-a3a6-d86dc014d820.c000.snappy.parquet"
+      ],
+      "benign_ordinal_sha256": "ee2e389a13c1fbd428f9be78224ec3e70020df2a58900eb5e1d6fc30fe46caa9"
+    }
+  ],
+  "test_rows": 4653501,
+  "runtime_seconds": 39.85795810003765
+}
